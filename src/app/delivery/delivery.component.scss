@@ -3,9 +3,16 @@
   padding: 0px;
 }
 .container {
-  padding: 10px;
+  padding: 7px;
+  h1 {
+    text-align: center;
+    color: #040559;
+    font-weight: 900;
+    font-family: 'Noto Sans HK', sans-serif;
+  }
   p.desc {
-    text-aling: center;
+    text-align: center;
+    font-size: 0.9em;
     font-family: 'Montserrat', sans-serif;
     color: #296a93;
     font-weight: 600;
