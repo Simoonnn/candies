@@ -14,8 +14,8 @@
    margin: 20px 0px;
    align-items: center;
    display: grid;
-   grid-auto-rows: 2.2em 2.2em 1.5em;
-   grid-template-columns: 1fr 7fr;
+   grid-auto-rows: 3em 3em 1.5em;
+   grid-template-columns: 11fr 70fr;
    grid-row-gap: 0.25em;
    h1.answer {
      color: rgba(11,164,0,0.96);
@@ -24,12 +24,15 @@
      color: #880100;
    }
    p {
-     font-size: 1em;
+     //color:
+     font-size: 1.1em;
+     line-height: 1.2em;
      font-family: 'Montserrat', sans-serif;
    }
    h1 {
+     justify-self: start;
      font-weight: 900;
-     font-size: 2em;
+     font-size: 2.3em;
    }
    .separation {
      width: 90%;
