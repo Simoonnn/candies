@@ -1,30 +1,36 @@
-
-.grid-container {
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.flex-container {
+  background-color: #d8e3ff;
   display: flex;
-  justify-content: space-around;
-  a.grid-item {
+  height: 40px;
+  align-items: center;
+  a.flex-item {
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
+    font-weight: 800;
     font-size: 1.5em;
     flex: 1 1;
     text-align: center;
-    color: #002bff;
+    color: #045880;
   }
-  a.grid-item:hover {
+  a.flex-item:hover {
     background-color: #caf7ff;
   }
-  a.grid-item:active {
+  a.flex-item:active {
     text-decoration: underline;
     color: #9a0002;
   }
 }
-.top-grid {
-  padding-bottom: 1em;
+.top-flex {
+  padding-bottom: 2px;
   width: 60%;
   border-bottom: 3px solid #7eaeff;
 }
-.bottom-grid {
-  padding-top: 1em;
+.bottom-flex {
+  padding-top: 2px;
   width: 100%;
   border-top: 3px solid #7eaeff;
 }
