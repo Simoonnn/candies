@@ -1,0 +1,35 @@
+/*
+font-family: 'Roboto', sans-serif;
+font-family: 'Noto Sans HK', sans-serif;
+font-family: 'Montserrat', sans-serif;
+ */
+.grid-container {
+  display: flex;
+  justify-content: space-around;
+  a.grid-item {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    flex: 1 1;
+    text-align: center;
+    color: #002bff;
+  }
+  a.grid-item:hover {
+    background-color: #caf7ff;
+  }
+  a.grid-item:active {
+    text-decoration: underline;
+    color: #9a0002;
+  }
+}
+.top-grid {
+  padding-bottom: 1em;
+  width: 60%;
+  border-bottom: 2px solid #7eaeff;
+}
+.bottom-grid {
+  padding-top: 1em;
+  width: 100%;
+  border-top: 2px solid #7eaeff;
+}
+
