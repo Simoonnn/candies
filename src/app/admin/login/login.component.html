@@ -1,0 +1,13 @@
+<div class="container">
+  <form [formGroup]="form" action="hellothere">
+    <div class="control-container">
+      <label for="email">Your email</label>
+      <input class="control" type="email" formControlName="email" id="email"/>
+    </div>
+    <div class="control-container">
+      <label for="password">Your password</label>
+      <input class="control" type="password" formControlName="password" id="password"/>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
