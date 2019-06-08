@@ -1,4 +1,36 @@
-.control.ng-invalid {
-  border: 1px solid red;
-  box-shadow: 1px 3px 10px 2px #480e03
+* {
+  padding: 0px;
+  margin: 0px;
 }
+.container {
+  text-align: left;
+  padding: 20px 10px;
+  .grid-container {
+    width: 100%;
+    display: grid;
+    grid: repeat(2, auto)/ 3fr 5fr;
+    align-items: end;
+    row-gap: 10px;
+
+    label {
+      font-family: 'Noto Sans HK', sans-serif;
+      font-size: 16px;
+      font-weight: 900;
+      color: #040559;
+      text-shadow: 1px 1px 10px rgba(5,0,89,0.2);
+
+    input {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 80px;
+      color: #044a5b;
+    }
+
+    //implement this
+    .control.ng-invalid {
+    }
+  }
+  #submit {
+    margin-top: 15px;
+  }
+}}
+
