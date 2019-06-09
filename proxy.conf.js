@@ -1,11 +1,12 @@
+
 const PROXY_CONFIG = [
   {
-    target: [
-      '/admin/**'
+    context: [
+      '/api/**'
     ],
-    target: "localhost:3000",
+    target: 'http://localhost:3000',
     secure: false,
-    "logLevel": "debug"
+    logLevel: 'debug'
   }
-]
-module.exports = PROXY_CONFIG
+];
+module.exports = PROXY_CONFIG;
