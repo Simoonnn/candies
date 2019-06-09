@@ -1,3 +1,4 @@
+import { url } from '../../../../backend-base-url';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -19,7 +20,7 @@ export class LoginComponent {
       email: this.form.get('email').value,
       password: this.form.get('password').value
     };
-    this.http.post('http://localhost:4200/api/admin/login', message).subscribe((resp) => {
+    this.http.post( url + 'api/admin/login', message).subscribe((resp) => {
       // @ts-ignore
       const response = resp.success;
       if (response) {

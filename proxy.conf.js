@@ -1,9 +1,11 @@
+import { url } from "./backend-base-url";
+
 const PROXY_CONFIG = [
   {
     context: [
       '/api/**'
     ],
-    target: "http://localhost:3000",
+    target: url,
     secure: false,
     "logLevel": "debug"
   }
