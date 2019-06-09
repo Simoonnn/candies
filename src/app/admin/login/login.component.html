@@ -2,6 +2,9 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()"
         action="http://localhost:4200/api/admin/login">
     <div class="grid-container">
+      <div class='invalid-cred' [style.display]="!emailPasswordInvalid ? 'none': 'block'">
+        <p>Invalid email/password combination</p>
+      </div>
       <label for="email">Your email</label>
       <input class="control"
              type="email" formControlName="email" id="email"/>
