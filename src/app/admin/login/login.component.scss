@@ -2,6 +2,8 @@
   padding: 0px;
   margin: 0px;
 }
+
+
 @keyframes button-disabled {
   to {
     border: 2px solid #ff2902;
@@ -21,6 +23,10 @@
     box-shadow: 1px 1px 10px 1px rgba(0,211,1,0.33);
   }
 }
+
+
+//main styling of the container
+
 .container {
   position:relative;
   background: rgba(184,214,255,0.15);
@@ -38,14 +44,8 @@
     width: 85%;
     display: grid;
     grid: repeat(3, auto) / 37% 63%;
-    row-gap: 7px;
+    row-gap: 15px;
 
-    input.control {
-      font-family: 'Roboto', sans-serif;
-      color: #22227d;
-      font-weight: 600;
-      font-size: 16px;
-    }
 
     label {
       font-family: 'Noto Sans HK', sans-serif;
@@ -54,10 +54,34 @@
       color: #040559;
       text-shadow: 1px 1px 10px rgba(5,0,89,0.2);
     }
-    //implement this
-    .control.ng-invalid {
+    // controls styling
 
+    input.control {
+      outline: none;
+      border-radius: 3px;
+      border: 1px solid gray;
+      font-family: 'Roboto', sans-serif;
+      color: #22227d;
+      font-weight: 600;
+      font-size: 14px;
     }
+
+    //control-invalid
+
+    input.control.ng-invalid.ng-touched {
+      border: 1px solid red;
+      box-shadow: 1px 1px 5px 1px red;
+    }
+
+    //control-valid
+
+    input.control.ng-valid.ng-touched {
+      border: 2px solid green;
+      box-shadow: 1px 1px 5px 1px green;
+    }
+
+
+    //keyframes for button animation
 
     input#submit {
       outline: none;
@@ -79,7 +103,6 @@
       background: rgba(169,25,34,0.53);
       color: #470005;
     }
-    //fix the html and typescript files
     #submit:hover {
       background: rgba(43,137,137,0.5);
     }

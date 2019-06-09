@@ -2,7 +2,8 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="grid-container">
       <label for="email">Your email</label>
-      <input class="control" type="email" formControlName="email" id="email"/>
+      <input class="control"
+             type="email" formControlName="email" id="email"/>
       <label for="password">Your password</label>
       <input class="control" type="password" formControlName="password" id="password"/>
       <input type="submit" id="submit" [disabled]="form.untouched || form.invalid"/>
