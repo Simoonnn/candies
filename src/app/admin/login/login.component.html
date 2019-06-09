@@ -1,5 +1,6 @@
 <div class="container">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()"
+        action="http://localhost:4200/api/admin/login">
     <div class="grid-container">
       <label for="email">Your email</label>
       <input class="control"
