@@ -4,9 +4,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { LoginComponent } from './login/login.component';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, CreateComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
