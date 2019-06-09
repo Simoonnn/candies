@@ -5,7 +5,7 @@
       <input class="control" type="email" formControlName="email" id="email"/>
       <label for="password">Your password</label>
       <input class="control" type="password" formControlName="password" id="password"/>
+      <input type="submit" id="submit" [disabled]="form.untouched || form.invalid"/>
     </div>
-    <input type="submit" id="submit"/>
   </form>
 </div>

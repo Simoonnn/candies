@@ -3,34 +3,60 @@
   margin: 0px;
 }
 .container {
+  position:relative;
+  background: rgba(184,214,255,0.15);
+  height: 600px;
   text-align: left;
-  padding: 20px 10px;
   .grid-container {
-    width: 100%;
+    column-gap: 8px;
+    position: absolute;
+    top: 40%;
+    background-color: rgba(57,108,255,0.25);
+    padding: 20px 20px;
+    transform: translateY(-50%);
+    border: 2px solid #0b1cff;
+    border-radius: 10px;
+    width: 85%;
     display: grid;
-    grid: repeat(2, auto)/ 3fr 5fr;
-    align-items: end;
-    row-gap: 10px;
+    grid: repeat(3, auto) / 37% 63%;
+    row-gap: 7px;
+
+    input.control {
+      font-family: 'Roboto', sans-serif;
+      color: #22227d;
+      font-weight: 600;
+      font-size: 16px;
+    }
 
     label {
       font-family: 'Noto Sans HK', sans-serif;
-      font-size: 16px;
+      font-size: 1em;
       font-weight: 900;
       color: #040559;
       text-shadow: 1px 1px 10px rgba(5,0,89,0.2);
-
-    input {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 80px;
-      color: #044a5b;
     }
-
     //implement this
     .control.ng-invalid {
+
+    }
+
+    input#submit {
+      margin-top: 10px;
+      font-size: 1.2em;
+      border-radius: 10px;
+      box-shadow: none;
+      border: 2px solid #050062;
+      padding: 1px 3px;
+      justify-self: stretch;
+      grid-column: span 2;
+    }
+    #submit:hover {
+
+    }
+    #submit:disabled {
+      background-color: rgba(14,17,82,0.2);
+      color: rgba(0,82,38,0.2);
     }
   }
-  #submit {
-    margin-top: 15px;
-  }
-}}
+}
 
