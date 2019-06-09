@@ -1,4 +1,4 @@
-import { url } from '../../../../backend-base-url';
+import { url } from '../../../../base-url';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
