@@ -2,6 +2,25 @@
   padding: 0px;
   margin: 0px;
 }
+@keyframes button-disabled {
+  to {
+    border: 2px solid #ff2902;
+    box-shadow: 1px 1px 10px 1px rgba(255,41,2,0.71);
+  }
+}
+@keyframes button-valid {
+  from {
+    background: rgba(169,25,34,0.53);
+    border: 2px solid #ff2902;
+  }
+  40% {
+    background: rgba(0,236,0,0.15);
+  }
+  to {
+    border: 2px solid green;
+    box-shadow: 1px 1px 10px 1px rgba(0,211,1,0.33);
+  }
+}
 .container {
   position:relative;
   background: rgba(184,214,255,0.15);
@@ -11,7 +30,7 @@
     column-gap: 8px;
     position: absolute;
     top: 40%;
-    background-color: rgba(57,108,255,0.25);
+    background: rgba(57,108,255,0.25);
     padding: 20px 20px;
     transform: translateY(-50%);
     border: 2px solid #0b1cff;
@@ -41,21 +60,31 @@
     }
 
     input#submit {
+      outline: none;
+      animation: button-valid 200ms ease-in 0ms 1 normal forwards;
+      background: rgba(0,236,0,0.15);
+      color: #f6fcff;
       margin-top: 10px;
       font-size: 1.2em;
+      font-weight: 900;
       border-radius: 10px;
       box-shadow: none;
-      border: 2px solid #050062;
+      border: 2px solid green;
       padding: 1px 3px;
       justify-self: stretch;
       grid-column: span 2;
     }
-    #submit:hover {
-
-    }
     #submit:disabled {
-      background-color: rgba(14,17,82,0.2);
-      color: rgba(0,82,38,0.2);
+      animation: button-disabled 200ms cubic-bezier(0.2, 0.5, 0.6, 0.8) 0s 1 normal forwards;
+      background: rgba(169,25,34,0.53);
+      color: #470005;
+    }
+    //fix the html and typescript files
+    #submit:hover {
+      background: rgba(43,137,137,0.5);
+    }
+    #submit:active {
+    background: rgba(43,137,137,0.8)
     }
   }
 }
