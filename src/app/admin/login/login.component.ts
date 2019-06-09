@@ -2,6 +2,7 @@ import { url } from '../../../../base-url';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +10,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  public emailPasswordValid;
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  public emailPasswordInvalid = false;
+  constructor(private fb: FormBuilder, private http: HttpClient,
+              private router: Router) { }
   form = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required]
@@ -23,16 +25,16 @@ export class LoginComponent {
     this.http.post( url + 'api/admin/login', message).subscribe((resp) => {
       // @ts-ignore
       const response = resp.success;
-      if (response) {
+      if (response === 'true') {
         // @ts-ignore
         const token = resp.token;
         // @ts-ignore
         const email = resp.email;
         sessionStorage.setItem('token', token);
         sessionStorage.setItem('email', email);
-        console.log(sessionStorage);
+        this.emailPasswordInvalid = false;
       } else {
-        this.emailPasswordValid = false;
+        this.emailPasswordInvalid = true;
       }
     });
   }
