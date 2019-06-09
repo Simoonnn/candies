@@ -6,6 +6,9 @@
   text-align: center;
   h1 {
     color: #22227d;
+     justify-self: start;
+     font-weight: 900;
+     font-size: 2.3em;
   }
   h3 {
     color: rgba(11,0,215,0.7);
@@ -28,11 +31,6 @@
      font-size: 1.1em;
      line-height: 1.2em;
      font-family: 'Montserrat', sans-serif;
-   }
-   h1 {
-     justify-self: start;
-     font-weight: 900;
-     font-size: 2.3em;
    }
    .separation {
      width: 90%;
