@@ -46,14 +46,20 @@
     display: grid;
     grid: 1fr 1fr 3fr 1fr 1fr / 37% 63%;
     row-gap: 15px;
-
+    //remove nasty outline
+    input {
+      outline: none;
+    }
     //output
     #output {
       position: relative;
       grid-column: span 2;
       width: 95%;
+      margin: 0px auto;
     }
     #input_text {
+      border-radius: 2px;
+      box-sizing: border-box;
       padding: 3px;
       font-family: 'Montserrat', sans-serif;
       color: rgba(17,0,131,0.81);
@@ -63,7 +69,7 @@
     }
     #clipboard-image {
       position: absolute;
-      right: -5px;
+      right: 5px;
       top: 4px;
       width: 17px;
       height: 17px;
@@ -72,12 +78,11 @@
     //description area
     textarea {
       box-sizing: border-box;
-      padding: 7px;
-      font-family: 'Roboto', sans-serif;
+      padding: 4px;
       color: #22227d;
+      outline: none;
       font-weight: 600;
       font-size: 15px;
-      outline: none;
       border: 1px solid black;
       resize: none;
       align-self: stretch;
