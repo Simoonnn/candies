@@ -26,6 +26,7 @@ export class CreateComponent implements OnInit {
     Validators.maxLength(500)]],
     price: ['', [Validators.required, Validators.maxLength(6)]]
   });
+  nameControl = this.form.get('name');
   ngOnInit() {
     // Send ajax requests sensibly
     const nameInput = document.getElementById('name');
@@ -47,6 +48,7 @@ export class CreateComponent implements OnInit {
         // @ts-ignore
         el.value = response.digest;
         console.log('Done');
+        this.invalidName = false;
       } else {
         // handle failure
         this.invalidName = true;
