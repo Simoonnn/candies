@@ -33,6 +33,7 @@ export class LoginComponent {
         sessionStorage.setItem('token', token);
         sessionStorage.setItem('email', email);
         this.emailPasswordInvalid = false;
+        this.router.navigateByUrl('/admin/create');
       } else {
         this.emailPasswordInvalid = true;
       }
