@@ -77,7 +77,7 @@ export class CreateComponent implements OnInit {
         console.log('Everything is ok!');
         this.http.post(url + 'api/items/create', body).subscribe();
       } else {
-        console.log('something went wrong');
+        this.router.navigateByUrl('/admin');
       }
     });
   }
