@@ -35,6 +35,8 @@ export class LoginComponent {
         this.emailPasswordInvalid = false;
         this.router.navigateByUrl('/admin/create');
       } else {
+        sessionStorage.removeItem('email');
+        sessionStorage.removeItem('token');
         this.emailPasswordInvalid = true;
       }
     });

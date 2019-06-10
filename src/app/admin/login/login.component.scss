@@ -53,87 +53,88 @@
     display: grid;
     grid: repeat(4, auto) / 37% 63%;
     row-gap: 15px;
+    align-items: center;
 
-      // Invalid credentials message
-      .invalid-cred {
-        animation: invalid-message-box 350ms ease-out 0ms normal forwards;
-        text-align: center;
-        background-color: rgba(169,25,34,0.53);
-        border-radius: 5px;
-        margin: 0px auto;
-        padding: 5px 10px;
-        border:2px solid red;
-        grid-column: span 2;
-      }
-      .invalid-cred p {
-        color: #22227d;
-        animation: invalid-message-text 200ms ease-out 400ms normal both;
-        font-weight: 900;
-        font-family: 'Noto Sans HK', sans-serif;
-        font-size: 15px;
-      }
-      label {
-        font-family: 'Noto Sans HK', sans-serif;
-        font-size: 0.7em;
-        font-weight: 900;
-        color: #040559;
-        text-shadow: 1px 1px 10px rgba(5,0,89,0.2);
-      }
-      // controls styling
+    // Invalid credentials message
+    .invalid-cred {
+      animation: invalid-message-box 350ms ease-out 0ms normal forwards;
+      text-align: center;
+      background-color: rgba(169,25,34,0.53);
+      border-radius: 5px;
+      margin: 0px auto;
+      padding: 5px 10px;
+      border:2px solid red;
+      grid-column: span 2;
+    }
+    .invalid-cred p {
+      color: #22227d;
+      animation: invalid-message-text 200ms ease-out 400ms normal both;
+      font-weight: 900;
+      font-family: 'Noto Sans HK', sans-serif;
+      font-size: 15px;
+    }
+    label {
+      font-family: 'Noto Sans HK', sans-serif;
+      font-size: 0.7em;
+      font-weight: 900;
+      color: #040559;
+      text-shadow: 1px 1px 10px rgba(5,0,89,0.2);
+    }
+    // controls styling
 
-      input.control {
-        outline: none;
-        border-radius: 3px;
-        border: 1px solid gray;
-        font-family: 'Roboto', sans-serif;
-        color: #22227d;
-        font-weight: 600;
-        font-size: 14px;
-      }
+    input.control {
+      outline: none;
+      border-radius: 3px;
+      border: 1px solid gray;
+      font-family: 'Roboto', sans-serif;
+      color: #22227d;
+      font-weight: 600;
+      font-size: 14px;
+    }
 
-      //control-invalid
+    //control-invalid
 
-      input.control.ng-invalid.ng-touched {
-        border: 1px solid red;
-        box-shadow: 1px 1px 5px 1px red;
-      }
+    input.control.ng-invalid.ng-touched {
+      border: 1px solid red;
+      box-shadow: 1px 1px 5px 1px red;
+    }
 
-      //control-valid
+    //control-valid
 
-      input.control.ng-valid.ng-touched {
-        border: 2px solid green;
-        box-shadow: 1px 1px 5px 1px green;
-      }
+    input.control.ng-valid.ng-touched {
+      border: 2px solid green;
+      box-shadow: 1px 1px 5px 1px green;
+    }
 
 
-      //keyframes for button animation
+    //keyframes for button animation
 
-      input#submit {
-        outline: none;
-        animation: button-valid 200ms ease-in 0ms 1 normal forwards;
-        background: rgba(0,236,0,0.15);
-        color: #f6fcff;
-        margin-top: 10px;
-        font-size: 1.2em;
-        font-weight: 900;
-        border-radius: 10px;
-        box-shadow: none;
-        border: 2px solid green;
-        padding: 1px 3px;
-        justify-self: stretch;
-        grid-column: span 2;
-      }
-      #submit:disabled {
-        animation: button-disabled 200ms cubic-bezier(0.2, 0.5, 0.6, 0.8) 0s 1 normal forwards;
-        background: rgba(169,25,34,0.53);
-        color: #470005;
-      }
-      #submit:hover {
-        background: rgba(43,137,137,0.5);
-      }
-      #submit:active {
-      background: rgba(43,137,137,0.8)
-      }
+    input#submit {
+      outline: none;
+      animation: button-valid 200ms ease-in 0ms 1 normal forwards;
+      background: rgba(0,236,0,0.15);
+      color: #f6fcff;
+      margin-top: 10px;
+      font-size: 1.2em;
+      font-weight: 900;
+      border-radius: 10px;
+      box-shadow: none;
+      border: 2px solid green;
+      padding: 1px 3px;
+      justify-self: stretch;
+      grid-column: span 2;
+    }
+    #submit:disabled {
+      animation: button-disabled 200ms cubic-bezier(0.2, 0.5, 0.6, 0.8) 0s 1 normal forwards;
+      background: rgba(169,25,34,0.53);
+      color: #470005;
+    }
+    #submit:hover {
+      background: rgba(43,137,137,0.5);
+    }
+    #submit:active {
+    background: rgba(43,137,137,0.8)
+    }
   }
 }
 
