@@ -3,6 +3,7 @@ import { IsLoggedInService } from '../is-logged-in.service';
 import { isLoggedInHelper } from '../helper';
 import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create',
@@ -14,9 +15,9 @@ export class CreateComponent implements OnInit {
   constructor(private fb: FormBuilder, private isLogged: IsLoggedInService,
               private router: Router) { }
   form = this.fb.group({
-    name: [],
-    description: [],
-    price: []
+    name: ['', [Validators.required]],
+    description: ['', [Validators.required, Validators.maxLength(2)]],
+    price: ['', [Validators.required, Validators.maxLength(6)]]
   });
   ngOnInit() {
     this.isLogged.check().subscribe((res) => {

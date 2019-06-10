@@ -98,7 +98,7 @@
     }
     // controls styling
 
-    input.control {
+    .control {
       outline: none;
       border-radius: 3px;
       border: 1px solid gray;
@@ -110,14 +110,14 @@
 
     //control-invalid
 
-    input.control.ng-invalid.ng-touched {
+    .control.ng-invalid.ng-touched {
       border: 1px solid red;
       box-shadow: 1px 1px 5px 1px red;
     }
 
     //control-valid
 
-    input.control.ng-valid.ng-touched {
+    .control.ng-valid.ng-touched {
       border: 2px solid green;
       box-shadow: 1px 1px 5px 1px green;
     }

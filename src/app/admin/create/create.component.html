@@ -13,7 +13,7 @@
       <textarea class="control" formControlName="description" id="description"></textarea>
       <label for="price">Price</label>
       <input type="text" class="control" formControlName="price" id="price"/>
-      <input type="submit" id="submit" />
+      <input type="submit" id="submit" [disabled]="form.invalid"/>
     </div>
   </form>
 </div>
