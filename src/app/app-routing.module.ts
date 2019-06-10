@@ -10,9 +10,7 @@ const routes: Routes = [
   {path: 'faq', component: FaqComponent},
   {path: 'delivery', component: DeliveryComponent},
   {path: 'policy', component: PolicyComponent},
-  {path: 'admin', loadChildren: () => {
-    return import('./admin/admin.module').then(mod => mod.AdminModule)
-  }}
+  {path: 'admin', loadChildren: './admin/admin.module#AdminModule'}
 ];
 
 @NgModule({

@@ -11,7 +11,9 @@ import { CreateComponent } from './create/create.component';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    ReactiveFormsModule
-]
+    ReactiveFormsModule,
+],
+  providers: [
+  ]
 })
 export class AdminModule { }
