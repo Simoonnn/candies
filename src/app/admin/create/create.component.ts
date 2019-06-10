@@ -25,5 +25,12 @@ export class CreateComponent implements OnInit {
       }
     });
   }
+  copyDigest() {
+    // @ts-ignore
+    const el: HTMLInputElement = document.getElementById('input_text');
+    el.select();
+    document.execCommand('copy');
+    document.getSelection().removeAllRanges();
+  }
 
 }
