@@ -1,0 +1,19 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.container {
+  display: inline;
+  height: auto;
+  .grid-container {
+    width: 95%;
+    margin: 20px auto;
+    display: grid;
+    column-gap: 5px;
+    grid-gap: 5px;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: auto;
+    grid-auto-columns: 50%;
+  }
+}
+

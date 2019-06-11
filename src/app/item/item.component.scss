@@ -1,0 +1,72 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  outline: none;
+}
+.container {
+  border: 2px solid;
+  padding: 5px;
+  text-align: center;
+  border-radius: 7px / 3px;
+  border: 2px solid rgba(38,22,178,0.41);
+  p.name, p.price, button.cart {
+    color: #040559;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+  }
+  p.name {
+    font-size: 1.3em;
+    margin-top: 5px;
+    text-shadow: 2px 1px 10px #8efaff;
+  }
+  p.price {
+    text-align: left;
+    padding: 0.3em;
+    border-radius: 4px;
+    font-size: 1em;
+    display: block;
+    width: 90%;
+    margin: 0px auto;
+    border: 1px solid gray;
+    background: url("../../assets/dollar-sign")
+    center right / auto 1.2em no-repeat content-box;
+  }
+  button.cart {
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(67,255,95,0.47);
+    background-color: rgba(16,255,31,0.3);
+    padding: 0.1em 0.4em;
+    margin-top: 0.4em;
+    border-radius: 15px / 15px;
+    width: 93%;
+    font-size: 1.2em;
+    img {
+      padding-right: 0.3em;
+      height: 1.1em;
+      position: absolute;
+      top: 50%;
+      right: 2%;
+      transform: translateY(-50%);
+    }
+  }
+  button.cart:hover {
+    transition: 100ms ease-in;
+    background-color: rgba(16,255,31,0.7);
+    transform: scale(1.05, 1.05)
+  }
+  .image-container {
+    margin: 10px auto;
+    position: relative;
+    width: 95%;
+    height: 100px;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}

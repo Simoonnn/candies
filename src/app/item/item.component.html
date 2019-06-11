@@ -1,3 +1,13 @@
-<p>
-  item works!
-</p>
+<div class="container">
+  <p class="name">{{object.name}}</p>
+  <div class="image-container">
+    <img [srcset]="'../../assets/' + object.img_digest"/>
+  </div>
+  <p class="price">
+    {{object.price}}
+  </p>
+  <button class="cart">
+    Buy
+    <img src="../../assets/cart.png"/>
+  </button>
+</div>
