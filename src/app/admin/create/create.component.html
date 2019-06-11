@@ -1,7 +1,7 @@
 <div class="container">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="error-message"
-           [ngClass]="invalidName ? 'show' : (nameControl.touched ? 'hide' : 'static-position')">
+           [ngClass]="invalidName ? 'show' : (wasInvalid ? 'hide' : 'static-position')">
         <p>This item name is already taken!</p>
       </div>
     <div class="grid-container">
