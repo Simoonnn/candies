@@ -49,8 +49,10 @@
 //main styling of the container
 
 .container {
+  position: relative;
   background: rgba(184,214,255,0.15);
   height: 600px;
+  width: auto;
   text-align: left;
   // error message box
   .error-message {
@@ -80,14 +82,14 @@
     align-items: center;
     column-gap: 8px;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     background: rgba(57,108,255,0.25);
     padding: 20px;
     transform: translateY(-50%) translateX(-50%);
     border: 2px solid #0b1cff;
     border-radius: 10px;
-    width: 85%;
+    width: 75%;
     display: grid;
     grid: 1fr 1fr 3fr 1fr 1fr / 37% 63%;
     row-gap: 15px;
@@ -117,11 +119,11 @@
     #input_text {
       border-radius: 2px;
       box-sizing: border-box;
-      padding: 3px;
+      padding: 5px;
       font-family: 'Montserrat', sans-serif;
       color: rgba(17,0,131,0.81);
       font-weight: 900;
-      font-size: 0.9em;
+      font-size: 0.6em;
       width: 100%;
     }
     #clipboard-image {
