@@ -27,7 +27,7 @@ export class CreateComponent implements OnInit {
     updateOn: 'blur'}],
     description: ['', [Validators.required, Validators.minLength(30),
     Validators.maxLength(500)]],
-    price: ['', [Validators.required, Validators.maxLength(6)]]
+    price: ['', [Validators.required, Validators.maxLength(6), Validators.pattern(/^[1-9][0-9]+$/)]]
   });
   nameControl = this.form.get('name');
   ngOnInit() {
