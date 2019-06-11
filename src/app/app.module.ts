@@ -9,6 +9,7 @@ import { FaqComponent } from './faq/faq.component';
 import { DeliveryComponent } from './delivery/delivery.component';
 import { PolicyComponent } from './policy/policy.component';
 import { DisplayComponent } from './display/display.component';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DisplayComponent } from './display/display.component';
     FaqComponent,
     DeliveryComponent,
     PolicyComponent,
-    DisplayComponent
+    DisplayComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
