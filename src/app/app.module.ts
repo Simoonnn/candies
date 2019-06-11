@@ -8,6 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { FaqComponent } from './faq/faq.component';
 import { DeliveryComponent } from './delivery/delivery.component';
 import { PolicyComponent } from './policy/policy.component';
+import { DisplayComponent } from './display/display.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PolicyComponent } from './policy/policy.component';
     AboutComponent,
     FaqComponent,
     DeliveryComponent,
-    PolicyComponent
+    PolicyComponent,
+    DisplayComponent
   ],
   imports: [
     BrowserModule,
