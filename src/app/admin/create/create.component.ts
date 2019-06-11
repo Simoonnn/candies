@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import {fromEvent, Observable, of} from 'rxjs';
+import { fromEvent, Observable, of } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 import { debounceTime, distinctUntilChanged, map, switchMap } from 'rxjs/operators';
 
@@ -23,8 +23,7 @@ export class CreateComponent implements OnInit {
   constructor(private fb: FormBuilder, private isLogged: IsLoggedInService,
               private router: Router, private http: HttpClient) { }
   form = this.fb.group({
-    name: ['', {validators: [Validators.required], asyncValidators: [this.validateName],
-    updateOn: 'blur'}],
+    name: ['', {validators: [Validators.required], asyncValidators: this.validateName, updateOn: 'blur'}],
     description: ['', [Validators.required, Validators.minLength(30),
     Validators.maxLength(500)]],
     price: ['', [Validators.required, Validators.maxLength(6), Validators.pattern(/^[1-9][0-9]+$/)]]
@@ -36,7 +35,7 @@ export class CreateComponent implements OnInit {
     const requests = fromEvent(nameInput, 'input').pipe(
       // @ts-ignore
       map((e) => e.target.value),
-      debounceTime(300),
+      debounceTime(600),
       distinctUntilChanged(),
       switchMap(() => ajax({url: url + 'api/items/generate_digest', method: 'post',
         // @ts-ignore
@@ -53,6 +52,8 @@ export class CreateComponent implements OnInit {
         this.invalidName = false;
       } else {
         // handle failure
+        //register async validation
+        this.form.get('name').markAsTouched();
         this.invalidName = true;
       }
     });
@@ -78,6 +79,13 @@ export class CreateComponent implements OnInit {
     request.subscribe((res) => {
       if (isLoggedInHelper(res)) {
         this.http.post(url + 'api/items/create', body).subscribe();
+        setTimeout(() => {
+          // @ts-ignore
+          const el: HTMLInputElement = document.getElementById('input_text');
+          el.value = '';
+          this.form.reset();
+          this.onInput(0);
+        })
       } else {
         this.router.navigateByUrl('/admin');
       }
