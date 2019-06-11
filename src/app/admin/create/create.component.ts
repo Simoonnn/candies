@@ -18,6 +18,7 @@ import { debounceTime, distinctUntilChanged, map, switchMap } from 'rxjs/operato
 })
 export class CreateComponent implements OnInit {
   public invalidName = false;
+  public charsLeft = 500;
 
   constructor(private fb: FormBuilder, private isLogged: IsLoggedInService,
               private router: Router, private http: HttpClient) { }
@@ -89,5 +90,12 @@ export class CreateComponent implements OnInit {
     } else {
       return of(null);
     }
+  }
+  onInput(boxLength) {
+    let left = 500 - boxLength;
+    if (left < 0 ) {
+      left = 0;
+    }
+    this.charsLeft = left;
   }
 }

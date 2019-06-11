@@ -12,8 +12,11 @@
         <input type="text" id="input_text" placeholder="Image Digest"/>
         <span id="clipboard-image" (click)="copyDigest()"></span>
       </div>
-      <label for="description">Item description:</label>
-      <textarea class="control" formControlName="description" id="description"></textarea>
+      <div class="description-container">
+        <label for="description">Item description:</label>
+        <p class="charsLeft">{{charsLeft + ' left'}}</p>
+      </div>
+      <textarea class="control" (input)="onInput($event.target.value.length)" formControlName="description" id="description"></textarea>
       <label for="price">Price:</label>
       <input type="text" class="control" formControlName="price" id="price"/>
       <input type="submit" id="submit" [disabled]="form.invalid"/>

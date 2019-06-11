@@ -85,6 +85,18 @@
     display: grid;
     grid: 1fr 1fr 3fr 1fr 1fr / 37% 63%;
     row-gap: 15px;
+    //add chars left container
+    .description-container {
+      position: relative;
+      .charsLeft {
+        padding: 10px;
+        text-align: center;
+        font-family: 'Noto Sans HK', sans-serif;
+        font-weight: 900;
+        color: #0f3662;
+        text-shadow: 1px 1px 10px rgba(5,0,89,0.2);
+      }
+    }
     //remove nasty outline
     input {
       outline: none;
@@ -129,8 +141,8 @@
     }
 
     label {
-      font-family: 'Noto Sans HK', sans-serif;
       font-size: 0.9em;
+      font-family: 'Noto Sans HK', sans-serif;
       font-weight: 900;
       color: #040559;
       text-shadow: 1px 1px 10px rgba(5,0,89,0.2);
