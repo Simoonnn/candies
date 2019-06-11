@@ -108,8 +108,9 @@
     }
     #clipboard-image {
       position: absolute;
-      right: 5px;
-      top: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 6px;
       width: 17px;
       height: 17px;
       background: url("../../../assets/copy.png") 0px 0px / 17px 17px no-repeat;
