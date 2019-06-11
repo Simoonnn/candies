@@ -5,16 +5,16 @@
         <p>This item name is already taken!</p>
       </div>
     <div class="grid-container">
-      <label for="name">Item name</label>
+      <label for="name">Item name:</label>
       <input class="control"
              type="text" formControlName="name" id="name"/>
       <div id="output">
         <input type="text" id="input_text" placeholder="Image Digest"/>
         <span id="clipboard-image" (click)="copyDigest()"></span>
       </div>
-      <label for="description">Item description</label>
+      <label for="description">Item description:</label>
       <textarea class="control" formControlName="description" id="description"></textarea>
-      <label for="price">Price</label>
+      <label for="price">Price:</label>
       <input type="text" class="control" formControlName="price" id="price"/>
       <input type="submit" id="submit" [disabled]="form.invalid"/>
     </div>

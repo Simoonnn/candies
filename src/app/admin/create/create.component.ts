@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { IsLoggedInService } from '../is-logged-in.service';
+import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { isLoggedInHelper } from '../helper';
 import { url } from '../../../../base-url';
 import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { fromEvent } from 'rxjs';
+import {fromEvent, Observable, of} from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 import { debounceTime, distinctUntilChanged, map, switchMap } from 'rxjs/operators';
 
@@ -21,7 +22,8 @@ export class CreateComponent implements OnInit {
   constructor(private fb: FormBuilder, private isLogged: IsLoggedInService,
               private router: Router, private http: HttpClient) { }
   form = this.fb.group({
-    name: ['', [Validators.required]],
+    name: ['', {validators: [Validators.required], asyncValidators: [this.validateName],
+    updateOn: 'blur'}],
     description: ['', [Validators.required, Validators.minLength(30),
     Validators.maxLength(500)]],
     price: ['', [Validators.required, Validators.maxLength(6)]]
@@ -33,7 +35,7 @@ export class CreateComponent implements OnInit {
     const requests = fromEvent(nameInput, 'input').pipe(
       // @ts-ignore
       map((e) => e.target.value),
-      debounceTime(500),
+      debounceTime(300),
       distinctUntilChanged(),
       switchMap(() => ajax({url: url + 'api/items/generate_digest', method: 'post',
         // @ts-ignore
@@ -47,7 +49,6 @@ export class CreateComponent implements OnInit {
         const el = document.getElementById('input_text');
         // @ts-ignore
         el.value = response.digest;
-        console.log('Done');
         this.invalidName = false;
       } else {
         // handle failure
@@ -72,16 +73,21 @@ export class CreateComponent implements OnInit {
     const description = this.form.get('description').value;
     const price = this.form.get('price').value;
     const body = { name, description, price };
-    console.log(body);
     const request = this.isLogged.check();
     request.subscribe((res) => {
       if (isLoggedInHelper(res)) {
-        console.log('Everything is ok!');
         this.http.post(url + 'api/items/create', body).subscribe();
       } else {
         this.router.navigateByUrl('/admin');
       }
     });
   }
-
+  validateName(control: AbstractControl): Observable<null | ValidationErrors> {
+    const query = document.querySelectorAll('.error-message.show');
+    if (query.length > 0) {
+      return of({'unique': 'false'})
+    } else {
+      return of(null);
+    }
+  }
 }
