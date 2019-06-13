@@ -29,9 +29,14 @@
         <option>30</option>
       </select>
     </label>
-
   </div>
   <div class="grid-container">
     <single-item (buy)="onBuy($event)" *ngFor="let item of items" [itemObject]="item"></single-item>
+  </div>
+</div>
+<div class="popup-container">
+  <div class="popup">
+    <img alt="close popup" src="../../assets/close.png"/>
+    <p>The item was successfully added to the cart</p>
   </div>
 </div>

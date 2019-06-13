@@ -124,4 +124,33 @@
     grid-auto-columns: 50%;
   }
 }
+//popup
+.popup-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(85,138,158,0.88);
+  text-align: center;
+  .popup {
+    background-color: rgba(85,138,158,0.6);
+    margin: 40vh auto;
+    width: 70%;
+    padding: 20px;
+    font-family: 'Noto Sans HK', sans-serif;
+    color: #2dce03;
+    font-weight: bold;
+    img {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: calc(40vh - 30px);
+      right: calc(15% - 15px);
+      &:hover {
+        box-shadow: 1px 1px 20px 2px blue;
+      }
+    }
+  }
+}
 
