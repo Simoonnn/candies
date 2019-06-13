@@ -34,9 +34,9 @@
     <single-item (buy)="onBuy($event)" *ngFor="let item of items" [itemObject]="item"></single-item>
   </div>
 </div>
-<div class="popup-container">
+<div class="popup-container" [ngClass]="popupClass">
   <div class="popup">
-    <img alt="close popup" src="../../assets/close.png"/>
+    <img alt="close popup" src="../../assets/close.png" (click)="popupClass='hide'"/>
     <p>The item was successfully added to the cart</p>
   </div>
 </div>

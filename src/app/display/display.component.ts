@@ -11,6 +11,7 @@ import {CartService} from '../cart.service';
   styleUrls: ['./display.component.scss']
 })
 export class DisplayComponent implements OnInit {
+  public popupClass = 'static';
   public items: Array<any>;
   public inputValue = '';
   public order = "init";
@@ -69,6 +70,7 @@ export class DisplayComponent implements OnInit {
     });
   }
   onBuy(message) {
+    this.popupClass = 'show';
     this.helper.setItemDict(message, 1);
     this.message = this.helper.generateMessage();
   }

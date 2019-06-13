@@ -3,6 +3,22 @@
   padding: 0px;
   margin: 0px;
 }
+@keyframes popup-show {
+  from {
+    transform: translateY(-110%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes popup-hide {
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateY(110%);
+  }
+ }
 .cart {
   text-align: center;
   box-sizing: border-box;
@@ -151,6 +167,15 @@
         box-shadow: 1px 1px 20px 2px blue;
       }
     }
+  }
+  &.show {
+    animation: popup-show 200ms ease-in both;
+  }
+  &.hide {
+    animation: popup-hide 200ms ease-in both;
+  }
+  &.static {
+    display: none;
   }
 }
 
