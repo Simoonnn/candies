@@ -18,7 +18,6 @@
     grid-auto-rows: auto;
     row-gap: 20px;
     column-gap: 5px;
-    border: 2px solid;
     width: 95%;
     // select order and perpage
     .order select, .perPage select {
@@ -41,29 +40,29 @@
     .searchBox {
       width: 100%;
       align-self: stretch;
-      box-sizing: border-box;
       grid-column: span 2;
       input {
-        font-size: 0.8em;
-        border-radius: 2px;
+        border-radius: 4px;
+        margin: 0px;
+        font-size: 0.9em;
         outline: none;
         border: 1px solid #001aff;
         border-right: none;
-        padding: 2px;
+        padding: 3px;
         width: 70%;
         font-family: 'Montserrat', sans-serif;
         color: #000092;
         font-weight: bolder;
-
       }
       button {
+        height: 100%;
+        border-radius: 4px;
         background: #b0e4ff;
         border: 1px solid #2115ff;
         font-family: cursive;
         font-weight: bold;
         font-size: 0.9em;
-        padding: 2px 4px;
-        border-radius: 3px;
+        padding: 3px 4px;
         &:hover {
           transition: 50ms ease-in;
           background-color: #5b778b;
