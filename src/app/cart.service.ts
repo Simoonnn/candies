@@ -20,8 +20,10 @@ export class CartService {
     return temp_cart;
   }
   setItemDict(item, diff) {
-    const cart = this.getItemDict();
-    if (!cart) return;
+    let cart = this.getItemDict();
+    if (!cart) {
+      cart = [];
+    }
     // Diff can be both negative and positive
     if (item in cart) {
       if (cart[item] + diff < 0) {
@@ -51,5 +53,15 @@ export class CartService {
       count += cart[name];
     }
     return count;
+  }
+  generateMessage() {
+    let message;
+    const count = this.count();
+    if (count == 0 || count > 1) {
+      message = count + " items in the cart";
+    } else {
+      message = "1 item in the cart";
+    }
+    return message;
   }
 }

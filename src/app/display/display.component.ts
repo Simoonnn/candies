@@ -22,12 +22,7 @@ export class DisplayComponent implements OnInit {
               private helper: CartService) { }
 
   ngOnInit() {
-    const count = this.helper.count();
-    if (count == 0 || count > 1) {
-      this.message = count + " items in the cart";
-    } else {
-      this.message = "1 item in the cart";
-    }
+    this.message = this.helper.generateMessage();
     const paging = document.getElementById('paging');
     const sorting = document.getElementById('sorting');
     const searchBox = document.getElementById('searchBox');
@@ -74,7 +69,8 @@ export class DisplayComponent implements OnInit {
     });
   }
   onBuy(message) {
-    console.log(message);
+    this.helper.setItemDict(message, 1);
+    this.message = this.helper.generateMessage();
   }
 
 }
