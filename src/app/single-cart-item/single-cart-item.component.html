@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container" *ngIf="object">
   <span>
     {{object.name}}
   </span>
   <img [srcset]="'../../assets/' + object.img_digest"/>
-  <input type="number" [(ngModel)]="quantity" (input)="onQuantityChange($event)"/>
+  <input type="number" [(ngModel)]="quantity" (input)="onQuantityChange()"/>
   <span class="priceText">Price:</span>
   <span class="price">{{'$' + totalPrice}}</span>
-  <span class="delete">X</span>
+  <span class="delete" (click)="deleteItem()">X</span>
 </div>
