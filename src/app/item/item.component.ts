@@ -13,6 +13,6 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
   }
   onClick() {
-    this.buy.emit(this.object.name);
+    this.buy.emit(this.object.id);
   }
 }

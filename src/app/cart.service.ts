@@ -12,7 +12,7 @@ export class CartService {
     const lists = cart.split(', ');
     let temp_cart = {};
     for (let index in lists) {
-      // 0 index for item name, 1 for quantity (separated by '=')
+      // 0 index for item id, 1 for quantity (separated by '=')
       const sublist = lists[index].split('=');
       temp_cart[sublist[0]] = +sublist[1];
     }
