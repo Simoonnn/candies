@@ -32,6 +32,6 @@
 
   </div>
   <div class="grid-container">
-    <single-item *ngFor="let item of items" [itemObject]="item"></single-item>
+    <single-item (buy)="onBuy($event)" *ngFor="let item of items" [itemObject]="item"></single-item>
   </div>
 </div>

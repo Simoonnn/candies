@@ -73,5 +73,8 @@ export class DisplayComponent implements OnInit {
       });
     });
   }
+  onBuy(message) {
+    console.log(message);
+  }
 
 }
