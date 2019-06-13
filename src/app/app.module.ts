@@ -12,6 +12,7 @@ import { PolicyComponent } from './policy/policy.component';
 import { DisplayComponent } from './display/display.component';
 import { ItemComponent } from './item/item.component';
 import { CartComponent } from './cart/cart.component';
+import { SingleCartItemComponent } from './single-cart-item/single-cart-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CartComponent } from './cart/cart.component';
     PolicyComponent,
     DisplayComponent,
     ItemComponent,
-    CartComponent
+    CartComponent,
+    SingleCartItemComponent
   ],
   imports: [
     BrowserModule,
