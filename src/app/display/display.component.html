@@ -2,21 +2,21 @@
   <h1>Store</h1>
   <div class="searchContainer">
     <div class="searchBox">
-      <input type="text" maxlength="50" autofocus/>
-      <button>Search</button>
+      <input type="text" [(ngModel)]="inputValue" maxlength="50" autofocus/>
+      <button (click)="onSearch()">Search</button>
     </div>
     <label class="order">
-      <select >
-        <option class="fOption">Sort by</option>
-        <option value="priceAsc">price ascending</option>
-        <option value="priceDesc">price descending</option>
-        <option value="nameAsc">name ascending</option>
-        <option value="nameDesc">name descending</option>
+      <select [(ngModel)]="order">
+        <option value="init" class="fOption">Sort by</option>
+        <option value="price|asc">price ascending</option>
+        <option value="price|desc">price descending</option>
+        <option value="name|asc">name ascending</option>
+        <option value="name|desc">name descending</option>
       </select>
     </label>
     <label class="perPage">
-      <select>
-        <option class="fOption">Per page</option>
+      <select [(ngModel)]="perPage">
+        <option value="init" class="fOption">Per page</option>
         <option>5</option>
         <option>10</option>
         <option>15</option>

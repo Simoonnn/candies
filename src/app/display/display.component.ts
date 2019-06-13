@@ -9,6 +9,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DisplayComponent implements OnInit {
   public items: Array<any>;
+  public inputValue;
+  public order = "init";
+  private initOrder = this.order;
+  public perPage = "init";;
+  private initPerPage = this.perPage;
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -20,6 +25,11 @@ export class DisplayComponent implements OnInit {
       // @ts-ignore
       this.items = res.response;
     })
+  }
+  onSearch() {
+    console.log(this.inputValue);
+    console.log(this.perPage);
+    console.log(this.order);
   }
 
 }
