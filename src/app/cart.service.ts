@@ -45,12 +45,12 @@ export class CartService {
     const cartItems = sublists.join(', ');
     localStorage.setItem('cart', cartItems);
   }
+  // doesnt count all the items, kind of groups
   count() {
     let count = 0;
-    const cart = this.getItemDict();
-    if (!cart) return 0;
-    for (let name in cart) {
-      count += cart[name];
+    const dict = this.getItemDict();
+    for (let i in dict) {
+      count++;
     }
     return count;
   }
