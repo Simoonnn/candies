@@ -1,8 +1,11 @@
-<div class="container">
+<div class="container" (click)="showDescription = !showDescription">
   <p class="name">{{object.name}}</p>
   <div class="image-container">
     <img [srcset]="'../../assets/' + object.img_digest"/>
   </div>
+  <p class="description" *ngIf="showDescription">
+    {{object.description}}
+  </p>
   <p class="price">
     {{object.price}}
   </p>

@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
-
+  public showDescription = false;
   constructor() { }
   @Output() buy = new EventEmitter();
   @Input('itemObject') object;
