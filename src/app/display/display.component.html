@@ -6,16 +6,16 @@
       <button (click)="onSearch()">Search</button>
     </div>
     <label class="order">
-      <select [(ngModel)]="order">
+      <select (input)="onSelect()" [(ngModel)]="order">
         <option value="init" class="fOption">Sort by</option>
-        <option value="price|asc">price ascending</option>
-        <option value="price|desc">price descending</option>
-        <option value="name|asc">name ascending</option>
-        <option value="name|desc">name descending</option>
+        <option value="priceSEPasc">price ascending</option>
+        <option value="priceSEPdesc">price descending</option>
+        <option value="nameSEPasc">name ascending</option>
+        <option value="nameSEPdesc">name descending</option>
       </select>
     </label>
     <label class="perPage">
-      <select [(ngModel)]="perPage">
+      <select (input)="onSelect()" [(ngModel)]="perPage">
         <option value="init" class="fOption">Per page</option>
         <option>5</option>
         <option>10</option>

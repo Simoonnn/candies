@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DisplayComponent implements OnInit {
   public items: Array<any>;
-  public inputValue;
+  public inputValue = '';
   public order = "init";
   private initOrder = this.order;
   public perPage = "init";;
@@ -17,19 +17,25 @@ export class DisplayComponent implements OnInit {
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.sendGetRequest();
+  }
+  onSearch() {
+    this.sendGetRequest();
+  }
+  onSelect() {
+    this.sendGetRequest();
+  }
+  sendGetRequest() {
     const body = {
-      page: (this.route.snapshot.queryParams['page'] || 1),
-      limit: (this.route.snapshot.queryParams['limit'] || 5)
+      page: (this.route.snapshot.queryParams['page'] || '1'),
+      limit: (this.perPage == 'init' ? '5' : this.perPage),
+      phrase: this.inputValue,
+      sort: (this.order == 'init' ? '' : this.order)
     };
     this.http.get('http://localhost:4200/api/items/get', { params: body }).subscribe((res) => {
       // @ts-ignore
       this.items = res.response;
     })
-  }
-  onSearch() {
-    console.log(this.inputValue);
-    console.log(this.perPage);
-    console.log(this.order);
   }
 
 }
