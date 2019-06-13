@@ -1,3 +1,6 @@
-<p>
-  cart works!
-</p>
+<div class="container">
+  <h1>Cart</h1>
+  <div class="grid-container">
+    <single-cart-item *ngFor="let object of items" (delete-item)="onDelete($event)" [item-object]="object"></single-cart-item>
+  </div>
+</div>

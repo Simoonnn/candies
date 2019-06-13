@@ -1,0 +1,18 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.container {
+  .grid-container {
+    display: grid;
+    grid-template-rows: 50px;
+    grid-auto-rows: 50px;
+    margin-bottom: 5px;
+    row-gap: 7px;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+}
