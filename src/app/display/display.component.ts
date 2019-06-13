@@ -11,6 +11,7 @@ import {CartService} from '../cart.service';
   styleUrls: ['./display.component.scss']
 })
 export class DisplayComponent implements OnInit {
+  private pCount = this.helper.count();
   public popupClass = 'static';
   public items: Array<any>;
   public inputValue = '';
@@ -70,8 +71,11 @@ export class DisplayComponent implements OnInit {
     });
   }
   onBuy(message) {
-    this.popupClass = 'show';
     this.helper.setItemDict(message, 1);
+    if (this.pCount != this.helper.count()) {
+      this.popupClass = 'show';
+      this.pCount = this.helper.count();
+    }
     this.message = this.helper.generateMessage();
   }
 
