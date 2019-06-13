@@ -9,17 +9,22 @@
   height: auto;
   .searchContainer {
     align-items: center;
+    justify-content: space-around;
     justify-items: center;
-    justify-content: space-evenly;
     margin: 0px auto;
     display: grid;
-    grid-template-columns: 4fr 2fr 5fr;
-    grid-auto-columns: 4fr 2fr 5fr;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr 1fr;
     grid-auto-rows: auto;
     row-gap: 20px;
+    column-gap: 5px;
     border: 2px solid;
-    // select
-    select {
+    width: 95%;
+    // select order and perpage
+    .order select, .perPage select {
+      .fOption {
+        display: none;
+      }
       background-color: rgba(172,231,240,0.4);
       font-size: 0.8em;
       font-weight: 700;
@@ -37,7 +42,7 @@
       width: 100%;
       align-self: stretch;
       box-sizing: border-box;
-      grid-column: span 3;
+      grid-column: span 2;
       input {
         font-size: 0.8em;
         border-radius: 2px;
