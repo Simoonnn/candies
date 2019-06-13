@@ -1,4 +1,5 @@
 * {
+  outline: none;
   padding: 0px;
   margin: 0px;
 }
@@ -7,20 +8,49 @@
   display: inline;
   height: auto;
   .searchContainer {
+    width: 90%;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-auto-columns: 1fr 2fr;
     grid-auto-rows:auto;
+    row-gap: 20px;
     .searchBox {
-      border: 1px solid black;
+      align-self: stretch;
+      box-sizing: border-box;
       grid-column: span 2;
       input {
-        width: 60%;
+        font-size: 0.8em;
+        border-radius: 2px;
+        outline: none;
+        border: 1px solid #001aff;
+        border-right: none;
+        padding: 2px;
+        width: 70%;
+        font-family: 'Montserrat', sans-serif;
+        color: #000092;
+        font-weight: bolder;
+
+      }
+      button {
+        background: #b0e4ff;
+        border: 1px solid #2115ff;
+        font-family: cursive;
+        font-weight: bold;
+        font-size: 0.9em;
+        padding: 2px 4px;
+        border-radius: 3px;
+        &:hover {
+          transition: 50ms ease-in;
+          background-color: #5b778b;
+          transform: scale(1.05, 1.05);
+        }
+
       }
     }
   }
   h1 {
-    margin-top: 0.6em;
+    font-family: 'Noto Sans HK', sans-serif;
+    margin: 0.5em 0em;
     color: #22227d;
     justify-self: start;
     font-weight: 900;
