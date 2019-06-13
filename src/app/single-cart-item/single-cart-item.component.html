@@ -1,3 +1,10 @@
-<p>
-  single-cart-item works!
-</p>
+<div class="container">
+  <span>
+    {{object.name}}
+  </span>
+  <img [srcset]="'../../assets/' + object.img_digest"/>
+  <input type="number" [(ngModel)]="quantity" (input)="onQuantityChange($event)"/>
+  <span class="priceText">Price:</span>
+  <span class="price">{{'$' + totalPrice}}</span>
+  <span class="delete">X</span>
+</div>

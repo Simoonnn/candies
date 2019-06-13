@@ -1,0 +1,38 @@
+.container {
+  display: grid;
+  height: 100%;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr 1fr;
+  column-gap: 10px;
+  span {
+    font-family: 'Noto Sans HK', sans-serif;
+    color: #296a93;
+  }
+  span.price {
+    color: rgba(6,140,0,0.83);
+    font-weight: bolder;
+  }
+  span.delete {
+    cursor: pointer;
+    transform: scaleX(1.5);
+    color: red;
+    font-weight: bolder;
+    &:hover {
+      text-shadow: 2px 2px 10px rgba(255,49,42,0.7);
+      color: #6e0018;
+    }
+  }
+  img {
+    border-radius: 5px;
+    max-height: 40px;
+    max-width: 100%;
+  }
+  input {
+    text-align: center;
+    font-weight: bold;
+    color: #275980;
+    font-family: 'Noto Sans HK', sans-serif;
+    width: 70%;
+  }
+}
