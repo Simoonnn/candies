@@ -8,6 +8,7 @@ export class CartService {
   constructor() { }
   getItemDict() {
     const cart = this.storage.getItem('cart');
+    if (!cart) return;
     const lists = cart.split(', ');
     let temp_cart = {};
     for (let index in lists) {
@@ -20,6 +21,7 @@ export class CartService {
   }
   setItemDict(item, diff) {
     const cart = this.getItemDict();
+    if (!cart) return;
     // Diff can be both negative and positive
     if (item in cart) {
       if (cart[item] + diff < 0) {
@@ -44,6 +46,7 @@ export class CartService {
   count() {
     let count = 0;
     const cart = this.getItemDict();
+    if (!cart) return 0;
     for (let name in cart) {
       count += cart[name];
     }
