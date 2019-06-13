@@ -3,10 +3,10 @@
   <div class="searchContainer">
     <div class="searchBox">
       <input type="text" [(ngModel)]="inputValue" maxlength="50" autofocus/>
-      <button (click)="onSearch()">Search</button>
+      <button id="searchBox">Search</button>
     </div>
     <label class="order">
-      <select (input)="onSelect()" [(ngModel)]="order">
+      <select id="sorting" [(ngModel)]="order">
         <option value="init" class="fOption">Sort by</option>
         <option value="priceSEPasc">price ascending</option>
         <option value="priceSEPdesc">price descending</option>
@@ -15,7 +15,7 @@
       </select>
     </label>
     <label class="perPage">
-      <select (input)="onSelect()" [(ngModel)]="perPage">
+      <select id='paging' [(ngModel)]="perPage">
         <option value="init" class="fOption">Per page</option>
         <option>5</option>
         <option>10</option>
