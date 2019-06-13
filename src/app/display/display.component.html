@@ -1,4 +1,25 @@
 <div class="container">
+  <h1>Store</h1>
+  <div class="searchContainer">
+    <div class="searchBox">
+      <input type="text"/>
+      <button>Search</button>
+    </div>
+    <label>
+      <select>
+        <option>Sort by</option>
+        <option>price ascending</option>
+        <option>price descending</option>
+        <option>name ascending</option>
+        <option>name descending</option>
+      </select>
+    </label>
+    <div class="pageRange">
+      <span>Per page</span>
+      <input type="range" min="1" max="45" value="16"
+             (input)="onRangeInput($event)"/>
+    </div>
+  </div>
   <div class="grid-container">
     <single-item *ngFor="let item of items" [itemObject]="item"></single-item>
   </div>
