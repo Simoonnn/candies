@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import {distinctUntilChanged, switchMap, map, debounceTime, debounce} from 'rxjs/operators';
-import { ajax } from 'rxjs/ajax';
 import { fromEvent } from 'rxjs';
+import {CartService} from '../cart.service';
 
 @Component({
   selector: 'app-display',
@@ -17,9 +17,17 @@ export class DisplayComponent implements OnInit {
   private initOrder = this.order;
   public perPage = "init";
   private initPerPage = this.perPage;
-  constructor(private http: HttpClient, private route: ActivatedRoute) { }
+  public message;
+  constructor(private http: HttpClient, private route: ActivatedRoute,
+              private helper: CartService) { }
 
   ngOnInit() {
+    const count = this.helper.count();
+    if (count == 0 || count > 1) {
+      this.message = count + " items in the cart";
+    } else {
+      this.message = "1 item in the cart";
+    }
     const paging = document.getElementById('paging');
     const sorting = document.getElementById('sorting');
     const searchBox = document.getElementById('searchBox');
