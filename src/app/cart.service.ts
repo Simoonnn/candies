@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   private storage = localStorage;
-  constructor() { }
+  constructor(private router: Router) { }
   getItemDict() {
     const cart = this.storage.getItem('cart');
     if (!cart) return;
@@ -16,30 +17,34 @@ export class CartService {
       const sublist = lists[index].split('=');
       temp_cart[sublist[0]] = +sublist[1];
     }
-    
     return temp_cart;
   }
-  setItemDict(item, diff) {
+  setItemDict(item, diff: string | number) {
     let cart = this.getItemDict();
     if (!cart) {
       cart = [];
     }
-    // Diff can be both negative and positive
+    // Diff can be both negative and positive or 'delete'
     if (item in cart) {
-      if (cart[item] + diff < 0) {
+      if (cart[item] + diff <= 0) {
         cart[item] = 0;
+      } else if (diff == 'delete'){
+        cart[item] = 'deleted';
       } else {
         cart[item] = cart[item] + diff;
       }
-    } else {
+    } else if (diff != 'delete') {
       cart[item] = 1;
     }
     this.setLocalStorageItem(cart);
   }
   setLocalStorageItem(dict) {
     let sublists = [];
-    for (let name in dict) {
-      let seq = (name+'='+dict[name]);
+    for (let id in dict) {
+      if (dict[id] == 'deleted') {
+        continue;
+      }
+      let seq = (id + '=' + dict[id]);
       sublists.push(seq);
     }
     const cartItems = sublists.join(', ');
@@ -63,5 +68,11 @@ export class CartService {
       message = "1 item in the cart";
     }
     return message;
+  }
+  findById(id) {
+    return this.getItemDict()[id];
+  }
+  deleteItem(id) {
+    this.setItemDict(id, 'delete');
   }
 }
