@@ -151,6 +151,7 @@
   left: 0px;
   background-color: rgba(85,138,158,0.88);
   text-align: center;
+  z-index: 5;
   .popup {
     background-color: rgba(85,138,158,0.6);
     margin: 40vh auto;
@@ -178,6 +179,14 @@
   }
   &.static {
     display: none;
+  }
+}
+@media(min-width: 560px) {
+  .popup {
+    width: 430px !important;
+    img {
+      right: calc((100vw - 430px) / 2 - 20px) !important;
+    }
   }
 }
 
