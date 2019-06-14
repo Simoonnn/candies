@@ -11,6 +11,7 @@ import {CartService} from '../cart.service';
   styleUrls: ['./display.component.scss']
 })
 export class DisplayComponent implements OnInit {
+  public spinning = false;
   private pCount = this.helper.count();
   public popupClass = 'static';
   public items: Array<any>;
@@ -31,11 +32,12 @@ export class DisplayComponent implements OnInit {
     this.generateAjax(paging, 'input');
     this.generateAjax(sorting, 'input');
     this.generateAjax(searchBox, 'click');
-
+    this.spinning = true;
     this.http.get('http://localhost:4200/api/items/get',
       { params: this.createGetRequestBody() }).subscribe((res) => {
       // @ts-ignore
       this.items = res.response;
+      this.spinning = false;
     });
 
   }
@@ -62,11 +64,13 @@ export class DisplayComponent implements OnInit {
         debounceTime(300),
         distinctUntilChanged());
     }
-    sub.subscribe((data) => {
+    sub.subscribe(() => {
+      this.spinning = true;
       this.http.get('http://localhost:4200/api/items/get',
         { params: this.createGetRequestBody() }).subscribe((res) => {
         // @ts-ignore
         this.items = res.response;
+        this.spinning = false;
       });
     });
   }
