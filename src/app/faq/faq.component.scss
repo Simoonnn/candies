@@ -3,6 +3,7 @@
   padding: 0px;
 }
 .container {
+  font-size: 14px;
   text-align: center;
   h1 {
     color: #22227d;
@@ -39,4 +40,39 @@
      grid-column: span 2;
    }
  }
+}
+
+@media (min-width: 320px) {
+  .container {
+    font-size: 16px;
+  }
+}
+@media(min-width: 520px) {
+  .container {
+    margin-left: 10%;
+  }
+}
+@media(min-width: 680px) {
+  .container {
+    width: 70%;
+  }
+}
+
+@media(min-width: 880px) {
+  .container {
+    font-size: 20px;
+  }
+}
+
+@media(min-width: 1140px) {
+  .container {
+    width: 60%;
+    font-size: 22px;
+  }
+}
+@media(min-width: 1500px) {
+  .container {
+    width: 55%;
+    font-size: 23px;
+  }
 }
