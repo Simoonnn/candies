@@ -3,10 +3,22 @@
   padding: 0px;
 }
 .container {
+  margin: 10px auto;
   text-align: center;
   padding: 5px;
+  .image-background {
+    opacity: 0.5;
+    z-index: -3;
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 99vw;
+    height: 100%;
+  }
   p {
-    color: #296a93;
+    font-weight: bold;
+    color: #1d4461;
     font-size: 1.25em;
     font-family: 'Montserrat', sans-serif;
   }
@@ -14,5 +26,48 @@
     color: #040559;
     font-weight: 900;
     font-family: 'Noto Sans HK', sans-serif;
+  }
+}
+@media(min-width: 480px) {
+  .container {
+    box-sizing: border-box;
+    padding: 10px 10% 10% 10%;
+  }
+}
+
+@media(min-width: 680px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media(min-width: 880px) {
+  .container {
+    font-size: 20px;
+    position: relative;
+    .image-background {
+      display: block;
+      background: url("../../assets/candies-photo2.jpg") 0 0 / cover;
+      transform: translateX(-10%);
+    }
+  }
+}
+
+@media(min-width: 1140px) {
+  .container {
+    width: 70%;
+    font-size: 22px;
+    .image-background {
+      transform: translateX(-15vw);
+    }
+  }
+}
+@media(min-width: 1500px) {
+  .container {
+    width: 60%;
+    font-size: 24px;
+    .image-background {
+      transform: translateX(-20vw);
+    }
   }
 }
