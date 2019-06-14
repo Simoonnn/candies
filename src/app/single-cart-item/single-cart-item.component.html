@@ -2,7 +2,7 @@
   <span>
     {{object.name}}
   </span>
-  <img [srcset]="'../../assets/' + object.img_digest"/>
+  <img [srcset]="'../../assets/items/' + object.img_digest"/>
   <input type="number" [(ngModel)]="quantity" (input)="onQuantityChange()"/>
   <span class="priceText">Price:</span>
   <span class="price">{{'$' + totalPrice}}</span>
