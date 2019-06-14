@@ -2,8 +2,13 @@
   margin: 0px;
   padding: 0px;
 }
+
 .container {
   padding: 7px;
+  background: white;
+  .image-background {
+    display: none;
+  }
   h1 {
     text-align: center;
     color: #040559;
@@ -67,5 +72,71 @@
   p.third {
     grid-column: 2 / 7;
     justify-self: flex-end;
+  }
+}
+@media(min-width: 350px) {
+  .flex-container {
+    margin: 0px auto;
+    width: 80%;
+  }
+}
+@media(min-width: 450px) {
+  .flex-container{
+    width: 77%;
+    img {
+      width: 80px;
+    }
+  }
+}
+@media(min-width: 520px) {
+  .container {
+    margin: 10px auto;
+  }
+}
+@media(min-width: 680px) {
+  .container {
+    width: 70%;
+    font-size: 20px;
+  }
+  .flex-container {
+    width: 90%;
+  }
+}
+
+@media(min-width: 880px) {
+}
+
+@media(min-width: 1140px) {
+  .container {
+    width: 40%;
+    font-size: 22px;
+    position: relative;
+    .image-background {
+      z-index: -3;
+      opacity: 0.4;
+      background: url("../../assets/candies-photo.jpg") 50% 0% / cover;
+      display: block;
+      position: absolute;
+      width: 100vw;
+      height: 100%;
+      top: 0px;
+      transform: translateX(-30vw);
+    }
+  }
+  .flex-container {
+    row-gap: 30px;
+  }
+}
+@media(min-width: 1280px) {
+  .flex-container {
+    img {
+      width: 100px;
+    }
+  }
+}
+@media(min-width: 1500px) {
+  .container {
+    width: 35%;
+    font-size: 23px;
   }
 }
