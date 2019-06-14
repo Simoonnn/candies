@@ -13,6 +13,7 @@ import { DisplayComponent } from './display/display.component';
 import { ItemComponent } from './item/item.component';
 import { CartComponent } from './cart/cart.component';
 import { SingleCartItemComponent } from './single-cart-item/single-cart-item.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SingleCartItemComponent } from './single-cart-item/single-cart-item.com
     DisplayComponent,
     ItemComponent,
     CartComponent,
-    SingleCartItemComponent
+    SingleCartItemComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,32 @@
+@keyframes spin{
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(720deg);
+  }
+}
+
+.container {
+  z-index: 80;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(107,105,148,0.47);
+}
+span {
+  z-index: 100;
+  position: fixed;
+  top: calc(45% - 60px);
+  left: calc(50% - 60px);
+  margin: 0px auto;
+  display: block;
+  border: 10px solid rgba(98,97,138,0.66);
+  border-top: 10px solid rgba(30,27,255,0.89);
+  width: 100px;
+  border-radius: 50%;
+  height: 100px;
+  animation: spin 1.2s ease-in-out infinite ;
+}
