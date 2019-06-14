@@ -28,10 +28,57 @@
   padding-bottom: 2px;
   width: 60%;
   border-bottom: 3px solid #7eaeff;
+  a:first-child {
+    border-right: 3px solid rgba(80,170,171,0.79);
+  }
 }
 .bottom-flex {
+  margin: 0px auto;
   padding-top: 2px;
   width: 100%;
   border-top: 3px solid #7eaeff;
+  a:nth-child(1), a:nth-child(2){
+    border-right: 3px solid rgba(80,170,171,0.79);
+  }
 }
 
+@media(min-width: 470px) {
+  .top-flex {
+    width: 50%;
+  }
+  .bottom-flex {
+    width: 80%;
+  }
+}
+@media(min-width: 680px) {
+  .top-flex {
+    width: 40%;
+  }
+  .bottom-flex {
+    width: 60%;
+  }
+}
+@media(min-width: 800px) {
+  .top-flex {
+    width: 35%;
+  }
+  .bottom-flex {
+    width: 55%;
+  }
+}
+@media(min-width: 1200px) {
+  .top-flex {
+    width: 30%;
+  }
+  .bottom-flex {
+    width: 50%;
+  }
+}
+@media(min-width: 1500px) {
+  .top-flex {
+    width: 20%;
+  }
+  .bottom-flex {
+    width: 40%;
+  }
+}
