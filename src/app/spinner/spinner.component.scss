@@ -14,7 +14,7 @@
   position: fixed;
   top: 0px;
   left: 0px;
-  background-color: rgba(107,105,148,0.47);
+  background-color: rgba(103,114,148,0.27);
 }
 span {
   z-index: 100;
@@ -23,8 +23,10 @@ span {
   left: calc(50% - 60px);
   margin: 0px auto;
   display: block;
-  border: 10px solid rgba(98,97,138,0.66);
-  border-top: 10px solid rgba(30,27,255,0.89);
+  border-left: 10px solid #cb0001;
+  border-right: 10px solid #28dc0b;
+  border-bottom: 10px solid #cb00b1;
+  border-top: 10px solid #414cff;
   width: 100px;
   border-radius: 50%;
   height: 100px;
