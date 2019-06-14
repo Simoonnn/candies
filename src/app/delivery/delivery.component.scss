@@ -117,7 +117,7 @@
       background: url("../../assets/candies-photo.jpg") 50% 0% / cover;
       display: block;
       position: absolute;
-      width: 100vw;
+      width: 99vw;
       height: 100%;
       top: 0px;
       transform: translateX(-30vw);
@@ -138,5 +138,8 @@
   .container {
     width: 35%;
     font-size: 23px;
+    .image-background {
+      transform: translateX(-32.5%);
+    }
   }
 }
